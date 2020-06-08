@@ -1,6 +1,6 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft, FiCheckCircle } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import axios from 'axios';
 import { LeafletMouseEvent } from 'leaflet';
@@ -46,6 +46,8 @@ const CreatePoint = () => {
   const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0]);
   const [selectedFile, setSelectedFile] = useState<File>();
+
+  const [overlay, setOverlay] = useState(false)
 
   const history = useHistory();
 
@@ -147,9 +149,10 @@ const CreatePoint = () => {
     }
 
     await api.post('points', data);
+    setOverlay(true);
+  }
 
-    alert('Ponto de coleta criado!');
-
+  function handleOverLay (){
     history.push('/');
   }
 
@@ -277,6 +280,13 @@ const CreatePoint = () => {
           Cadastrar ponto de coleta
         </button>
       </form>
+
+      <div id="overlay" onClick={handleOverLay} style={{display: overlay ? 'block' : 'none' }}>
+        <div id="text">
+        <span><FiCheckCircle size={50} color='#34cb79'/></span>
+          <br/>Cadastro Concluido!
+        </div>
+      </div>
     </div>
   );
 };
