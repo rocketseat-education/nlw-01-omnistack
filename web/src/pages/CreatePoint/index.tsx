@@ -170,9 +170,9 @@ const CreatePoint = () => {
         <Dropzone onFileUploaded={setSelectedFile} />
 
         <fieldset>
-          <legend>
+          <header role="legend">
             <h2>Dados</h2>
-          </legend>
+          </header>
 
           <div className="field">
             <label htmlFor="name">Nome da entidade</label>
@@ -207,10 +207,10 @@ const CreatePoint = () => {
         </fieldset>
 
         <fieldset>
-          <legend>
+          <header role="legend">
             <h2>Endereço</h2>
             <span>Selecione o endereço no mapa</span>
-          </legend>
+          </header>
 
           <Map center={initialPosition} zoom={15} onClick={handleMapClick}>
             <TileLayer
@@ -254,10 +254,10 @@ const CreatePoint = () => {
         </fieldset>
 
         <fieldset>
-          <legend>
+          <header role="legend">
             <h2>Ítens de coleta</h2>
             <span>Selecione um ou mais ítens abaixo</span>
-          </legend>
+          </header>
 
           <ul className="items-grid">
             {items.map(item => (

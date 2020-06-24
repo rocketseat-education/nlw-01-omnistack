@@ -48,7 +48,7 @@
   border: 0;
 }
 
-#page-create-point form legend {
+#page-create-point form header[role="legend"] {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -56,11 +56,11 @@
   margin-bottom: 40px;
 }
 
-#page-create-point form legend h2 {
+#page-create-point form header[role="legend"] h2 {
   font-size: 24px;
 }
 
-#page-create-point form legend span {
+#page-create-point form header[role="legend"] span {
   font-size: 14px;
   font-weight: normal;
   color: var(--text-color);
