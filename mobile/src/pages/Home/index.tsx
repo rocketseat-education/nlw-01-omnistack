@@ -120,7 +120,7 @@ const Home = () => {
             items={cities}
           />
 
-          <RectButton style={styles.button} onPress={handleNavigateToPoints}>
+          <RectButton rippleColor='#2FB86E' style={styles.button} onPress={handleNavigateToPoints}>
             <View style={styles.buttonIcon}>
               <Text>
                 <Icon name="arrow-right" color="#FFF" size={24} />
